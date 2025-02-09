@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime  
 
+
 now =  datetime.now()
 time = now.strftime("%d %B %Y")
 # Create your models here.

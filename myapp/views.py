@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from .models import *
+from django.http import Http404
 
 from .models import Comment,Post
 # Create your views here.
@@ -178,3 +179,6 @@ def contact_us(request):
         context['message']=f"Dear {name}, Thanks for your time!"
 
     return render(request,"contact.html")
+
+def custom_page_not_found(request, exception):
+    return render(request, '404.html', status=404)

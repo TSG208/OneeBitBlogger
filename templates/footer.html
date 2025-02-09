@@ -1,4 +1,3 @@
-
 <style>
   h4 {
     text-align: left;
@@ -28,51 +27,51 @@
       text-align: center;
     }
   }
+
+  .advertisement-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .advertisement-section h4 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .advertisement-section p {
+    color: #666;
+    font-size: 16px;
+  }
+
+  .telegram-button {
+    background-color: #0088cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  .telegram-button:hover {
+    background-color: #006699;
+  }
 </style>
 
 <footer>
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h4 class="text-light">SERVICE</h4>
-        <ul>
-          <li><a href="#">Shipping & Returns</a></li>
-          <li><a href="#">Size Guide</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h4 class="text-light">ACCOUNT</h4>
-        <ul>
-          <li><a href="{% url 'signin' %}">Login</a></li>
-          <li><a href="{% url 'signup' %}">Signup</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h4 class="text-light">INFORMATION</h4>
-        <ul>
-          <li><a href="{% url 'blog' %}">Our Story</a></li>
-          <li><a href="#">Find a stocklist</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h4 class="text-light">CONNECT</h4>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/keerti-vishwkarma-8ba754243/">Facebook</a></li>
-          <li><a href="https://www.linkedin.com/in/keerti-vishwkarma-8ba754243/">Instagram</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="p-3">
-          <p>Developed with 💖 by <a href="https://www.linkedin.com/in/keerti-vishwkarma-8ba754243/">Keerti</a> <br>
-            &copy; Copyright 2023 | All Rights Reserved
-        </div>
+      <!-- قسم مجتمعنا في تليجرام -->
+      <div class="col-lg-12 text-center mt-4">
+        <h4 class="text-light">مجتمعنا في تليجرام</h4>
+        <a href="https://t.me/One1_Bit01" target="_blank" class="telegram-button">
+          <i class="fab fa-telegram-plane"></i> انضم إلى قناتنا
+        </a>
       </div>
     </div>
   </div>
+
 </footer>

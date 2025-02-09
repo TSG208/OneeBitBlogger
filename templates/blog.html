@@ -1,31 +1,26 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="مدونة متخصصة في الأمن السيبراني وأخبار التكنولوجيا">
   <meta name="author" content="TemplateMo">
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cairo:200,300,400,600,700,900&display=swap" rel="stylesheet">
 
-  <title>Blogs</title>
+  <title>مدونة الأمن السيبراني</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-
 
 </head>
 
@@ -47,42 +42,51 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{% static 'assets/images/img1.jpg' %}" alt="image1">
+          <img src="{% static 'assets/images/cyber1.jpg' %}" alt="صورة 1">
           <div class="carousel-caption d-none d-md-block">
+            <h5>أحدث أخبار الأمن السيبراني</h5>
+            <p>تابع آخر التحديثات في عالم الحماية الرقمية.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{% static 'assets/images/img2.jpg' %}" alt="image2">
+          <img src="{% static 'assets/images/cyber2.jpg' %}" alt="صورة 2">
           <div class="carousel-caption d-none d-md-block">
+            <h5>نصائح أمنية</h5>
+            <p>تعلم كيفية حماية بياناتك من الاختراقات.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{% static 'assets/images/img3.jpg' %}" alt="image3">
+          <img src="{% static 'assets/images/cyber3.jpg' %}" alt="صورة 3">
           <div class="carousel-caption d-none d-md-block">
+            <h5>أدوات الحماية</h5>
+            <p>اكتشف أفضل الأدوات لتأمين أجهزتك.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{% static 'assets/images/img4.jpg' %}" alt="image4">
+          <img src="{% static 'assets/images/cyber4.jpg' %}" alt="صورة 4">
           <div class="carousel-caption d-none d-md-block">
+            <h5>أخبار التكنولوجيا</h5>
+            <p>كن على اطلاع بآخر التطورات التكنولوجية.</p>
           </div>
         </div>
       </div>
+    </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">السابق</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
         data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">التالي</span>
       </button>
     </div>
   </div>
 
   {% if user.is_authenticated %}
   <div class="container mt-5">
-    <h5>MY POSTS</h5>
+    <h5>منشوراتي</h5>
     <hr>
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1">
 
@@ -96,7 +100,7 @@
           </a>
           <form method="post" action="{% url 'increaselikes' post.id %}">
             {% csrf_token %}
-            <button class="float-right small" type="submit"
+            <button class="float-left small" type="submit"
               style="border: none; background: transparent; font-size: 25px;"><i
                 class="fa fa-heart text-danger"></i></button>
           </form>
@@ -107,7 +111,7 @@
       </div>
       {% endfor %}
     </div>
-    <a class="text-danger text-decoration-none" href="{% url 'profile' user.id %}" style="cursor:pointer;">View All
+    <a class="text-danger text-decoration-none" href="{% url 'profile' user.id %}" style="cursor:pointer;">عرض الكل
       >></a>
   </div>
   {% endif %}
@@ -115,7 +119,7 @@
 
   <section class="blog-posts">
     <div class="container">
-      <h3 class="text-center" style="margin: 50px; font-size: 40px; color: rgb(231, 92, 92);">RECENT POSTS</h3>
+      <h3 class="text-center" style="margin: 50px; font-size: 40px; color: rgb(231, 92, 92);">أحدث المقالات</h3>
       <div class="row">
         <div class="col-lg-12">
           <div class="all-blog-posts">
@@ -131,7 +135,7 @@
                     <span>{{post.category}}</span>
                     <form method="post" action="{% url 'increaselikes' post.id %}">
                       {% csrf_token %}
-                      <button class="float-right btn btn-outline-danger" type="submit ">
+                      <button class="float-left btn btn-outline-danger" type="submit ">
                         {{post.likes}} <i class="fa fa-heart"></i></button>
                     </form>
                     <a href="{% url 'post' post.id %}" class="text-decoration-none text-dark">
@@ -153,7 +157,12 @@
     </div>
   </section>
 
-  {% include 'footer.html' %}
+  <!-- أيقونات التليجرام -->
+  <div class="telegram-icons fixed-bottom text-end mb-3 me-3">
+    <!-- الزر الأول -->
+    <a href="https://t.me/One1_Bit01" target="_blank" class="btn btn-primary btn-lg me-2">
+      <i class="fab fa-telegram-plane"></i> قناتنا في تليقرام
+    </a>
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>

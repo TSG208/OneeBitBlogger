@@ -1,5 +1,7 @@
 from . import views
 from django.urls import path
+from django.conf.urls import handler404
+from myapp.views import custom_page_not_found
 
 urlpatterns = [
     path("",views.index,name="index"),
@@ -18,3 +20,5 @@ urlpatterns = [
     path("post/delete/<int:id>",views.deletepost,name="deletepost"),
     path("contact",views.contact_us,name="contact"),
 ]
+
+handler404 = custom_page_not_found 
